@@ -10,8 +10,12 @@ class PayrollWindow
     return const SizedBox(
       height: 500,
       width: 600,
-      child: Card(
-        child: Text("My Payroll Data"),
+      child: widget(
+        child: Card(
+          elevation: 5,
+          child:
+              Text("My Payroll Data"),
+        ),
       ),
     );
   }
