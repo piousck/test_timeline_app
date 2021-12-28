@@ -14,6 +14,9 @@ class MyHomePage extends StatelessWidget {
           toolbarHeight: 10,
           backgroundColor: Colors.amber,
         ),
-        drawer:  NavigationDrawer());
+        drawer: NavigationDrawer(),
+        body: const Text("Contents"),
+        );
+        
   }
 }

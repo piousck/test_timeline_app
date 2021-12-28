@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:test_timeline_app/provider/nav_provider.dart';
 
@@ -64,22 +65,26 @@ class NavigationDrawer extends StatelessWidget {
 Widget buildCollapseIcon(BuildContext context, bool isCollapsed) {
   const double size = 52;
   final icon = isCollapsed ? Icons.arrow_forward_ios : Icons.arrow_back_ios;
-  return Material(
-    color: Colors.transparent,
-    child: InkWell(
-      child: Container(
-        width: size,
-        height: size,
-        child: Icon(
-          icon,
-          color: Colors.white,
+  final alignment = isCollapsed ? Alignment.center : Alignment.centerRight;
+  return Container(
+    alignment: alignment,
+    child: Material(
+      color: Colors.transparent,
+      child: InkWell(
+        child: Container(
+          width: size,
+          height: size,
+          child: Icon(
+            icon,
+            color: Colors.white,
+          ),
         ),
+        onTap: () {
+          final provider =
+              Provider.of<NavigationProvider>(context, listen: false);
+          provider.toggleIsCollapsed();
+        },
       ),
-      onTap: () {
-        final provider =
-            Provider.of<NavigationProvider>(context, listen: false);
-        provider.toggleIsCollapsed();
-      },
     ),
   );
 }
