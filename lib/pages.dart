@@ -36,17 +36,14 @@ class _MyHomePageState
       body: Row(
         children: [
           Center(
-            child: Expanded(
-              flex: 1,
-              child: Row(
-                children: [
-                  NavigationDrawer(),
-                  const SizedBox(
-                    width: 100,
-                  ),
-                  const PayrollWindow(),
-                ],
-              ),
+            child: Row(
+              children: [
+                NavigationDrawer(),
+                const SizedBox(
+                  width: 100,
+                ),
+                const PayrollWindow(),
+              ],
             ),
           )
         ],
